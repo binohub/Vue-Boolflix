@@ -22,11 +22,11 @@ export default {
     }
   },
   methods:{
-    functionSearch(needle){
-      console.warn(`this is needle ${needle}`);
-      this.searchInput = needle;
-      console.log(`this is search input ${searchInput}`);
-    }
+    // functionSearch(needle){
+    //   console.warn(`this is needle ${needle}`);
+    //   this.searchInput = needle;
+    //   console.log(`this is search input ${searchInput}`);
+    // }
   }
 }
 </script>
