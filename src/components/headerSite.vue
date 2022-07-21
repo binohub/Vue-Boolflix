@@ -1,7 +1,7 @@
 <template>
   <header>
     <input type="text" placeholder="ricerca"
-    v-model="search" @keyup.enter="$emit('channelSearch', this.search)">
+    v-model="search" @keyup.enter="$emit('channelSearch', search)">
   </header>
 </template>
 
