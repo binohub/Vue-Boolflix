@@ -1,7 +1,7 @@
 <template>
   <div id="app"> 
-    <headerSite />
-    <mainSite />
+    <headerSite @channelSearch="functionSearch" />
+    <mainSite :search="searchInput" />
   </div>
 </template>
 
@@ -14,13 +14,22 @@ export default {
   components: {
     headerSite,
     mainSite,
-  }
+  },
   data: function(){
-    
+    return{
+      searchInput:"",
+    }
+  },
+  methods:{
+    functionSearch(needle){
+      console.warn(`this is needle ${needle}`);
+      this.searchInput = needle;
+      console.log(`this is search input ${searchInput}`);
+    }
   }
 }
 </script>
-
+ 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
 
