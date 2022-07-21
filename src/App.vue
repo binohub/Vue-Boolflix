@@ -1,7 +1,9 @@
 <template>
   <div id="app"> 
-    <headerSite @channelSearch="functionSearch" />
-    <mainSite :search="searchInput" />
+
+    <headerSite />
+    <mainSite />
+
   </div>
 </template>
 
@@ -17,7 +19,6 @@ export default {
   },
   data: function(){
     return{
-      searchInput:"",
     }
   },
   methods:{
@@ -29,7 +30,7 @@ export default {
   }
 }
 </script>
- 
+
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
 
