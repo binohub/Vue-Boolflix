@@ -1,7 +1,7 @@
 <template>
   <div id="app"> 
 
-    <headerSite />
+    <headerSite @channelSearch="functionSearch"  />
     <mainSite />
 
   </div>
@@ -19,14 +19,14 @@ export default {
   },
   data: function(){
     return{
+      search:'',
     }
   },
   methods:{
-    // functionSearch(needle){
-    //   console.warn(`this is needle ${needle}`);
-    //   this.searchInput = needle;
-    //   console.log(`this is search input ${searchInput}`);
-    // }
+    functionSearch(input){
+      this.search = input;
+      console.log(`this is search ${this.search}`);
+    }
   }
 }
 </script>

@@ -1,18 +1,18 @@
 <template>
   <header>
-
-    <nav class="navbar navbar-light bg-light">
-      <form class="d-flex form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-
+    <input type="text" placeholder="ricerca"
+    v-model="search" @keyup.enter="$emit('channelSearch', this.search)">
   </header>
 </template>
 
 <script>
 export default {
+
+  data(){
+    return{
+      search:'',
+    }
+  }
 }
 </script>
 
