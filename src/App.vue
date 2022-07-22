@@ -1,64 +1,91 @@
 <template>
   <div id="app">
 
-    <headerSite @channelSearch="functionSearch" />
-    <mainSite />
+    <headerSite @parentSearch="functionSearch" />
+    <mainSite :propFilmResultArray='filmResultArray' />
 
   </div>
 </template>
+
+
+
+
 
 <script>
 import axios from 'axios'
 import headerSite from './components/headerSite.vue'
 import mainSite from './components/mainSite.vue'
-
 export default {
   name: 'App',
+
+
+
   components: {
     headerSite,
     mainSite,
   },
+
+
+
   data() {
     return {
-      search: '',
+      //! IMPORT AXIOS BEFORE
       apiSearch: 'https://api.themoviedb.org/3/search/',
       apiMovie: 'movie?',
-      apiKey: 'api_key=fc7176f21c9d0e2ebc73ae83e20968a4',
+      apiKey: 'api_key=12ee404a8bdcc1b9710ad43bccb87cd6',
       addQuery: '&query=',
       // userQuery: 'xanax',
+
+      // ! SEARCH E' LA VERSIONE DINAMICA DI USER QUERY
+      search: '',
       filmResultArray: [],
     }
   },
+
+
+
   methods: {
 
     getFilms() {
       axios.get(
+        //! STA CREANDO IL LINK DINAMICO
         this.apiSearch +
         this.apiMovie +
         this.apiKey +
         this.addQuery +
+        //! DYNAMIC REQUEST
         this.search
+        //TODO SEARCH DA COLLEGARE AL SEARCH INPUT => HEADER
       )
         .then((response) => {
+              console.log(`hai cercato ${this.search}`);
           this.filmResultArray = response.data.results;
-          console.log(this.filmResultArray);
+              console.log(`query on working... attendi risposta`);
+              console.log(`risposta ottenuta! sto popolando l'array... (filmResultArray)`);
+            console.log(this.filmResultArray);
         })
         .catch((error) => {
-          console.log(error);
+            console.warn(error);
         })
     },
 
-    functionSearch(input) {
-      this.search = input;
-      console.warn(this.search);
+    functionSearch(search) {
+      this.search = search;
+        console.warn(this.search);
       this.getFilms();
     }
   },
-  mounted(){
 
+
+
+  mounted(){
   },
 }
 </script>
+
+
+
+
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
