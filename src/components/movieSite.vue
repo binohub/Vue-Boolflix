@@ -1,13 +1,9 @@
 <template>
 
-    <div id="movieSite">
-
-        <div class="filmHeader">
-
-            <div class="col-12">
-                <h2>Movies</h2>
-            </div>
-            <ul>
+    <div class="row">
+        <div class="filmHeader col-12">
+            <h2>Movies</h2>
+            <!-- <ul>
                 <li class="col-3">
                     Title
                 </li>
@@ -20,28 +16,33 @@
                 <li class="col-3">
                     Vote Count
                 </li>
-            </ul>
+            </ul> -->
+        </div>
+        <div v-for="film in propFilmResultArray" :key="film.id" class="col-3">
+
+            <div class="cardUp">
+                <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${film.poster_path}`" alt="poster">
+            </div>
+
+            <div class="cardDown">
+                <ul>
+                    <li class="">
+                        {{ film.title }}
+                    </li>
+                    <li class="">
+                        {{ film.original_title }}
+                    </li>
+                    <li class="">
+                        {{ film.original_language }}
+                    </li>
+                    <li class="">
+                        {{ film.vote_count }}
+                    </li>
+                </ul>
+            </div>
 
         </div>
-
-
-        <ul v-for="film in propFilmResultArray" :key="film.id">
-            <li class="col-3">
-                {{ film.title }}
-            </li>
-            <li class="col-3">
-                {{ film.original_title }}
-            </li>
-            <li class="col-3">
-                {{ film.original_language }}
-            </li>
-            <li class="col-3">
-                {{ film.vote_count }}
-            </li>
-        </ul>
-
     </div>
-
 
 </template>
 
