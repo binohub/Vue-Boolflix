@@ -1,46 +1,12 @@
 <template>
-
   <div id="mainSite">
+
     <div class="container">
-      <div class="row">
-
-        <div class="filmHeader">
-          <ul>
-            <li class="col-3">
-              Title
-            </li>
-            <li class="col-3">
-              Original Title
-            </li>
-            <li class="col-3">
-              Original Language
-            </li>
-            <li class="col-3">
-              Vote Count
-            </li>
-          </ul>
-
-        </div>
-
-
-        <ul v-for="film in propFilmResultArray" :key="film.id">
-          <li class="col-3">
-            {{ film.title }}
-          </li>
-          <li class="col-3">
-            {{ film.original_title }}
-          </li>
-          <li class="col-3">
-            {{ film.original_language }}
-          </li>
-          <li class="col-3">
-            {{ film.vote_count }}
-          </li>
-        </ul>
-
-      </div>
+      <movieSite :propFilmResultArray="propFilmResultArray" />
+      <seriesSite :propTvResultArray="propTvResultArray" />
     </div>
   </div>
+
 
 </template>
 
@@ -49,27 +15,22 @@
 
 
 <script>
+import movieSite from './movieSite.vue'
+import seriesSite from './seriesSite.vue'
+
 export default {
+  components: {
+    movieSite,
+    seriesSite,
+  },
   props: {
     propFilmResultArray: Array,
+    propTvResultArray: Array,
   },
-
-
-
   data() {
-    return {
-    }
+    return {};
   },
 
-
-
-  methods: {
-  },
-
-
-
-  mounted() {
-  },
 }
 </script>
 
@@ -77,15 +38,19 @@ export default {
 
 
 
-<style scoped lang="scss">
+<style lang="scss">
 #mainSite {
   .container {
     .row {
-      padding: 5rem 0;
+      padding: 1rem 0;
+      text-align: center;
 
-      .filmHeader {
-        ul{
-          li{
+      .filmHeader,
+      .seriesHeader {
+        margin: 2rem 0;
+
+        ul {
+          li {
             font-size: 1.5rem;
             letter-spacing: .2rem;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -95,14 +60,13 @@ export default {
 
       ul {
         list-style-type: none;
-        display: flex;
         justify-content: space-between;
         text-align: center;
-        padding: 3rem 0;
 
         li {
-          font-weight: 600;
-          padding: 0 1rem;
+          font-size: .6rem;
+          font-weight: 800;
+          margin: .5rem 0;
         }
       }
     }

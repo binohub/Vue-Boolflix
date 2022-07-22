@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       // ! DA COLLEGARE CON IL PARENT SEARCH
-      search: '',
+      search: 'spider man',
     }
   }
 }

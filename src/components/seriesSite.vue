@@ -1,8 +1,8 @@
 <template>
 
     <div class="row">
-        <div class="filmHeader col-12">
-            <h2>Movies</h2>
+        <div class="seriesHeader col-12">
+                <h2>Tv Shows</h2>
             <!-- <ul>
                 <li class="col-3">
                     Title
@@ -18,25 +18,25 @@
                 </li>
             </ul> -->
         </div>
-        <div v-for="film in propFilmResultArray" :key="film.id" class="col-3">
+        <div v-for="tv in propTvResultArray" :key="tv.id" class="col-3">
 
             <div class="cardUp">
-                <img class="img-fluid" :src="`${imgUrl}${film.poster_path}`" alt="poster">
+                <img class="img-fluid" :src="imgUrl + tv.poster_path" alt="poster">
             </div>
 
             <div class="cardDown">
                 <ul>
                     <li class="">
-                        {{ film.title }}
+                        {{ tv.name }}
                     </li>
                     <li class="">
-                        {{ film.original_title }}
+                        {{ tv.original_name }}
                     </li>
                     <li class="">
-                        {{ film.original_language }}
+                        {{ tv.original_language }}
                     </li>
                     <li class="">
-                        {{ film.vote_count }}
+                        {{ tv.vote_count }}
                     </li>
                 </ul>
             </div>
@@ -53,7 +53,7 @@
 <script>
 export default {
     props: {
-        propFilmResultArray: Array,
+        propTvResultArray: Array,
     },
 
 
@@ -70,5 +70,5 @@ export default {
 
 
 
-<style scoped lang="scss">
+<style lang="scss">
 </style>
