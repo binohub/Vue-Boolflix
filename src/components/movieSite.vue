@@ -33,10 +33,10 @@
                         {{ film.original_title }}
                     </li>
                     <li class="">
-                        {{ film.original_language }}
+                        <img class="img-fluid" :src="`${langUrl}${film.original_language}.png`" alt="">
                     </li>
                     <li class="">
-                        {{ film.vote_count }}
+                        <span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
                     </li>
                 </ul>
             </div>
@@ -61,8 +61,15 @@ export default {
     data() {
         return {
             imgUrl: "https://image.tmdb.org/t/p/w342/",
+            langUrl: "../../public/lang/",
         }
     },
+
+    methods: {
+        functionHalf(vote){
+            return Math.max(Math.ceil(vote / 2), 1)
+        },
+    }
 }
 </script>
 

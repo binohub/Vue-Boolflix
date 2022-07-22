@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="seriesHeader col-12">
-                <h2>Tv Shows</h2>
+            <h2>Tv Shows</h2>
             <!-- <ul>
                 <li class="col-3">
                     Title
@@ -36,7 +36,7 @@
                         {{ tv.original_language }}
                     </li>
                     <li class="">
-                        {{ tv.vote_count }}
+                        <span v-for="n in functionHalf(tv.vote_average)" :key="n"> 🕷 </span>
                     </li>
                 </ul>
             </div>
@@ -63,6 +63,11 @@ export default {
             imgUrl: "https://image.tmdb.org/t/p/w342/",
         }
     },
+    methods: {
+        functionHalf(vote) {
+            return Math.max(Math.ceil(vote / 2), 1)
+        },
+    }
 }
 </script>
 

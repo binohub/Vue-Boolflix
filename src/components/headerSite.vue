@@ -29,6 +29,8 @@ export default {
       // ! DA COLLEGARE CON IL PARENT SEARCH
       search: 'spider man',
     }
+  }, 
+  methods:{
   }
 }
 </script>

@@ -49,13 +49,13 @@ export default {
       .seriesHeader {
         margin: 2rem 0;
 
-        ul {
-          li {
-            font-size: 1.5rem;
-            letter-spacing: .2rem;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          }
-        }
+        // ul {
+        //   li {
+        //     font-size: 1.5rem;
+        //     letter-spacing: .2rem;
+        //     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        //   }
+        // }
       }
 
       ul {
@@ -67,6 +67,10 @@ export default {
           font-size: .6rem;
           font-weight: 800;
           margin: .5rem 0;
+          img{
+            height: 20px;
+            width: 20px;
+          }
         }
       }
     }
