@@ -18,7 +18,7 @@
                 </li>
             </ul> -->
         </div>
-        <div v-for="tv in propTvResultArray" :key="tv.id" class="col-3">
+        <div v-for="tv in propTvResultArray" :key="tv.id" class="col-2">
 
             <div class="cardUp">
                 <img class="img-fluid" :src="imgUrl + tv.poster_path" alt="poster">

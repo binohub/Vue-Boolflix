@@ -2,9 +2,7 @@
   <div id="app">
 
     <headerSite @parentSearch="functionSearch" />
-    <mainSite 
-    :propTvResultArray="tvResultArray"
-    :propFilmResultArray='filmResultArray'  />
+    <mainSite :propTvResultArray="tvResultArray" :propFilmResultArray='filmResultArray' />
 
   </div>
 </template>
@@ -116,4 +114,11 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
+#app {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: .1rem;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
 </style>

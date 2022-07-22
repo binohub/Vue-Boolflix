@@ -18,7 +18,7 @@
                 </li>
             </ul> -->
         </div>
-        <div v-for="film in propFilmResultArray" :key="film.id" class="col-3">
+        <div v-for="film in propFilmResultArray" :key="film.id" class="netCard col-2">
 
             <div class="cardUp">
                 <img class="img-fluid" :src="`${imgUrl}${film.poster_path}`" alt="poster">
@@ -27,16 +27,16 @@
             <div class="cardDown">
                 <ul>
                     <li class="">
-                        {{ film.title }}
+                        <span class="descCard">TITOLO:</span>{{ film.title }}
                     </li>
                     <li class="">
-                        {{ film.original_title }}
+                        <span class="descCard">TITOLO ORIGINALE:</span>{{ film.original_title }}
                     </li>
                     <li class="">
                         <img class="img-fluid" :src="`${langUrl}${film.original_language}.png`" alt="">
                     </li>
                     <li class="">
-                        <span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
+                        <span class="descCard">VOTO:</span><span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
                     </li>
                 </ul>
             </div>
@@ -78,4 +78,8 @@ export default {
 
 
 <style scoped lang="scss">
+
+
+
+
 </style>

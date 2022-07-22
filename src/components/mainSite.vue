@@ -44,6 +44,9 @@ export default {
     .row {
       padding: 1rem 0;
       text-align: center;
+      color: white;
+
+
 
       .filmHeader,
       .seriesHeader {
@@ -58,19 +61,39 @@ export default {
         // }
       }
 
+      .cardUp img {
+        position: relative;
+        border-radius: 15px;
+        z-index: 2;
+      }
+
+      .cardUp img:active {
+        z-index: -1;
+      }
+
+      .cardDown ul {
+        position: relative;
+        bottom: 200px;
+      }
+
       ul {
         list-style-type: none;
         justify-content: space-between;
         text-align: center;
+        padding: .2rem;
 
         li {
-          font-size: .6rem;
-          font-weight: 800;
-          margin: .5rem 0;
-          img{
+          font-size: .5rem;
+
+          span.descCard{
+            color: red;
+          }
+
+          img {
             height: 20px;
             width: 20px;
           }
+
         }
       }
     }
