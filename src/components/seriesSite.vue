@@ -19,29 +19,30 @@
                 </li>
             </ul> -->
         </div>
-        <div v-for="tv in propTvResultArray" :key="tv.id" class="col-2">
+        <div v-for="tv in propTvResultArray" :key="tv.id" class="netCard col-2">
 
-            <div class="cardUp">
+            <div class="cardUp position-relative">
                 <img class="img-fluid" :src="imgUrl + tv.poster_path" alt="poster">
+                <div class="cardDown position-absolute">
+                    <ul>
+                        <li class="descCard">
+                            <span class="descCard">TITOLO:</span> {{ tv.name }}
+                        </li>
+                        <li class="descCard">
+                            <span class="descCard">TITOLO ORIGINALE:</span> {{ tv.original_name }}
+                        </li>
+                        <li class="">
+                            {{ tv.original_language }}
+                        </li>
+                        <li class="">
+                            <span v-for="n in 5" :key="n"
+                                :class="n <= functionHalf(tv.vote_average) ? 'yellowStar' : 'darkStar'"> ✩ </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="cardDown">
-                <ul>
-                    <li class="">
-                        {{ tv.name }}
-                    </li>
-                    <li class="">
-                        {{ tv.original_name }}
-                    </li>
-                    <li class="">
-                        {{ tv.original_language }}
-                    </li>
-                    <li class="">
-                        <span v-for="n in 5" :key="n" 
-                        :class= " n <= functionHalf(tv.vote_average) ? 'yellowStar' : 'darkStar' "> ✩ </span>
-                    </li>
-                </ul>
-            </div>
+
 
         </div>
     </div>

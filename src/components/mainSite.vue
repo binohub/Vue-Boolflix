@@ -41,6 +41,7 @@ export default {
 <style lang="scss">
 #mainSite {
   .container {
+    overflow-x: auto;
     .row {
       padding: 1rem 0;
       text-align: center;
