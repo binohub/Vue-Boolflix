@@ -51,41 +51,31 @@ export default {
       .filmHeader,
       .seriesHeader {
         margin: 2rem 0;
-
-        // ul {
-        //   li {
-        //     font-size: 1.5rem;
-        //     letter-spacing: .2rem;
-        //     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        //   }
-        // }
       }
-
-      .cardUp img {
-        position: relative;
-        border-radius: 15px;
-        z-index: 2;
+      .cardUp{
+        margin: 1rem 0;
+        min-height: 250px;
       }
-
-      .cardUp img:active {
-        z-index: -1;
+      .netCard:hover .cardDown{
+        visibility: visible;
       }
-
-      .cardDown ul {
-        position: relative;
-        bottom: 200px;
+        .netCard:hover .cardUp{
+        visibility: hidden;
       }
-
+      .cardDown{
+        top: 10%;
+        bottom: 10%;
+        visibility: hidden;
+      }
       ul {
         list-style-type: none;
-        justify-content: space-between;
-        text-align: center;
-        padding: .2rem;
+        text-align: start;
 
         li {
           font-size: .5rem;
+          margin: 1.2rem 0;
 
-          span.descCard{
+          span.descCard {
             color: red;
           }
 

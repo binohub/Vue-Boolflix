@@ -37,7 +37,8 @@
                         {{ tv.original_language }}
                     </li>
                     <li class="">
-                        <span v-for="n in functionHalf(tv.vote_average)" :key="n"> 🕷 </span>
+                        <span v-for="n in 5" :key="n" 
+                        :class= " n <= functionHalf(tv.vote_average) ? 'yellowStar' : 'darkStar' "> ✩ </span>
                     </li>
                 </ul>
             </div>

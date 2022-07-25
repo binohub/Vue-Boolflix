@@ -22,26 +22,29 @@
         </div>
         <div v-for="film in propFilmResultArray" :key="film.id" class="netCard col-2">
 
-            <div class="cardUp">
+            <div class="cardUp position-relative">
                 <img class="img-fluid" :src="`${imgUrl}${film.poster_path}`" alt="poster">
+                <div class="cardDown position-absolute">
+                    <ul>
+                        <li class="">
+                            <span class="descCard">TITOLO:</span>{{ film.title }}
+                        </li>
+                        <li class="">
+                            <span class="descCard">TITOLO ORIGINALE:</span>{{ film.original_title }}
+                        </li>
+                        <li class="">
+                            <img class="img-fluid" :src="`${langUrl}${film.original_language}.png`" alt="">
+                        </li>
+                        <li class="">
+                            <span v-for="n in 5" :key="n"
+                                :class="n <= functionHalf(film.vote_average) ? 'yellowStar' : 'darkStar'"> ✩ </span>
+                            <!-- <span v-for="n in functionHalf(film.vote_average)" :key='n'> ⭐ </span> -->
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="cardDown">
-                <ul>
-                    <li class="">
-                        <span class="descCard">TITOLO:</span>{{ film.title }}
-                    </li>
-                    <li class="">
-                        <span class="descCard">TITOLO ORIGINALE:</span>{{ film.original_title }}
-                    </li>
-                    <li class="">
-                        <img class="img-fluid" :src="`${langUrl}${film.original_language}.png`" alt="">
-                    </li>
-                    <li class="">
-                        <span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
-                    </li>
-                </ul>
-            </div>
+
 
         </div>
     </div>
@@ -68,7 +71,7 @@ export default {
     },
 
     methods: {
-        functionHalf(vote){
+        functionHalf(vote) {
             return Math.max(Math.ceil(vote / 2), 1)
         },
     }
@@ -80,8 +83,4 @@ export default {
 
 
 <style scoped lang="scss">
-
-
-
-
 </style>
