@@ -2,7 +2,9 @@
 
     <div class="row">
         <div class="filmHeader col-12">
-            <h2>Movies</h2>
+            <h2 v-if="propFilmResultArray.length">Movies Founded</h2>
+            <h2 v-if="propFilmResultArray.length === 0">Search a Movie</h2>
+
             <!-- <ul>
                 <li class="col-3">
                     Title
@@ -36,7 +38,7 @@
                         <img class="img-fluid" :src="`${langUrl}${film.original_language}.png`" alt="">
                     </li>
                     <li class="">
-                        <span class="descCard">VOTO:</span><span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
+                        <span v-for="n in functionHalf(film.vote_average)" :key='n'> 🕷 </span>
                     </li>
                 </ul>
             </div>

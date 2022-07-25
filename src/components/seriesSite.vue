@@ -2,7 +2,8 @@
 
     <div class="row">
         <div class="seriesHeader col-12">
-            <h2>Tv Shows</h2>
+            <h2 v-if="propTvResultArray.length">Tv Shows Founded</h2>
+            <h2 v-if="propTvResultArray.length === 0">Search a Tv Show</h2>
             <!-- <ul>
                 <li class="col-3">
                     Title
