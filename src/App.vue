@@ -35,9 +35,7 @@ export default {
       apiSeries: 'tv?',
       apiKey: 'api_key=12ee404a8bdcc1b9710ad43bccb87cd6',
       addQuery: '&query=',
-      // userQuery: 'xanax',
-
-      // ! SEARCH E' LA VERSIONE DINAMICA DI USER QUERY
+      // userQuery: '',
       search: '',
       filmResultArray: [],
       tvResultArray: [],
